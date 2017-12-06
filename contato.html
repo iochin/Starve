@@ -1,0 +1,123 @@
+<html>
+
+  <head>
+
+    <meta charset="iso-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="content-type" content="text/html">
+	
+    <title>Don't Starve wiki</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style type="text/css">
+	@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+      body {
+        padding-top: 54px;
+		background: #ac7339;
+      }
+      @media (min-width: 992px) {
+        body {
+          padding-top: 56px;
+        }
+      }
+	  @media (min-width: 992px) {
+		.col-md-center {
+			float: none;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	  }	
+	}  
+    </style>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="wiki.html">Don't Starve wiki</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="wiki.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="personagem.html">Personagens
+			  </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="itens.html">Itens</a>
+
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="contato.html">Contato</a>
+			  <span class="sr-only">(atual)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+		<div class="col-md-5 col-md-center">
+			<div class="form-area">  
+				<form role="form" action="contato.php" method="post">
+				<br style="clear:both">
+							<h3 style="margin-bottom: 25px; text-align: center;">Fromulario para contato</h3>
+							<div class="form-group">
+								<input type="text" class="form-control" id="name" name="nome" placeholder="Nome" required>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="mobile" name="telefone" placeholder="Telefone" required>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="subject" name="assunto" placeholder="Assunto" required>
+							</div>
+							<div class="form-group">
+							<textarea class="form-control" type="textarea" id="message" name="mensagem" placeholder="Mensagem" maxlength="140" rows="7"></textarea>
+								<span class="help-block"><p id="characterLeft" class="help-block ">Limite de caracteres:</p></span>                    
+							</div>
+					
+				<button id="submit"  name="enviar" type="submit" class="btn btn-dark">Enviar</button>
+				</form>
+			</div>
+		</div>		
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script>
+	$(document).ready(function(){ 
+    $('#characterLeft').text('140 characteres disponiveis');
+    $('#message').keydown(function () {
+        var max = 140;
+        var len = $(this).val().length;
+        if (len >= max) {
+            $('#characterLeft').text('Você atingiu o limite');
+            $('#characterLeft').addClass('red');
+            $('#btnSubmit').addClass('disabled');            
+        } 
+        else {
+            var ch = max - len;
+            $('#characterLeft').text(ch + ' characteres disponiveis');
+            $('#btnSubmit').removeClass('disabled');
+            $('#characterLeft').removeClass('red');            
+			}
+		});    
+	});
+
+	</script>
+	
+  </body>
+
+</html>
